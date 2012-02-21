@@ -115,22 +115,35 @@ window.Mercury = {
     toolbars: {
       primary: {
         save:                  ['Save', 'Save this page'],
-        preview:               ['Preview', 'Preview this page', { toggle: true, mode: true }],
-        sep1:                  ' ',
         undoredo:              {
           undo:                ['Undo', 'Undo your last action'],
           redo:                ['Redo', 'Redo your last action'],
           sep:                 ' '
           },
-        insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['editable', 'markupable'] }],
-        insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['editable', 'markupable'] }],
+        //insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['editable', 'markupable'] }],
+
+        text:                ['Text', 'Text'],
+        shapes:                ['Shapes', 'Shapes'],
         insertTable:           ['Table', 'Insert Table', { modal: '/mercury/modals/table.html', regions: ['editable', 'markupable'] }],
-        insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['editable', 'markupable'] }],
-        snippetPanel:          ['Snippet', 'Snippet Panel', { panel: '/mercury/panels/snippets.html' }],
+        charts:                ['Charts', 'Charts'],
+
+        sep:  ' ',
+        insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['editable', 'markupable'] }],
+
+        //insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['editable', 'markupable'] }],
+
+        snippetPanel:          ['Widgets', 'Widgets Panel', { panel: '/mercury/panels/snippets.html' }],
+        //historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
+        //notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }],
+
         sep2:                  ' ',
-        historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
+        colors:                ['Colors', 'Colors'],
+        transform:             ['Transform', 'Transformation'],
+        align:                 ['Align', 'Text Alignment'],
+
         sep3:                  ' ',
-        notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }]
+        preview:               ['Preview', 'Preview this page', { toggle: true, mode: true }],
+        publish:               ['Publish', 'Publish this book']
         },
 
       editable: {
