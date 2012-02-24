@@ -5,9 +5,85 @@
     <%= csrf_meta_tags %>
     <title>Mercury Editor</title>
     <%= stylesheet_link_tag    'mercury', 'mercury_overrides' %>
-    <%= javascript_include_tag 'mercury', 'mercury_overrides' %>
-  </head>
-  <body>
+    <%= javascript_include_tag 'mercury', 'mercury_overrides', '/prototype', '/assets/mercury/support/history', '/assets/mercury_loader' %>
+        <!-- add prototype and styles to ensure that libraries don't collide and css doesn't conflict -->
+    <title>Mango Editor beta</title>
+
+    <style type="text/css">
+      #contents{
+      	border:1px solid black;
+      	width:20%;
+      	height:100%;
+      	float:left;
+      	background-color: #fff;
+      }
+      #editable{
+      	width:60%;
+      	height:100%;
+      	margin: 0px 30%;
+      	background-color: #fff;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #aaa;
+      }
+      .contents{
+      list-style:none;
+      }
+      .contents li{
+      border:1px solid black;
+      margin:3px;
+      }
+
+    </style>
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0">
+
+    <!-- include the loader -->
+
+
+    <!-- preload snippets -->
+    <script type="text/javascript">
+      // it's worth mentioning that mercury is not loaded in the first request, but should be loaded in the second.
+      History.Adapter.bind(window, 'statechange', function() {
+        var state = History.getState();
+        console.debug(state.data, state.title, state.url);
+      });
+
+      Event.observe(window, "mercury:ready", function() {
+        Mercury.saveURL = '/contents';
+        Mercury.Snippet.load({
+          snippet_0:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "00"}},
+          snippet_1:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "01"}},
+          snippet_2:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "02"}},
+          snippet_3:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "03"}},
+          snippet_4:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "04"}},
+          snippet_5:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "05"}},
+          snippet_6:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "06"}},
+          snippet_7:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "07"}},
+          snippet_8:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "08"}},
+          snippet_9:  {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "09"}},
+          snippet_10: {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "10"}},
+          snippet_11: {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "11"}},
+          snippet_12: {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "12"}},
+          snippet_13: {name: 'example', options: {'options[favorite_beer]': "Bells Hopslam", 'options[first_name]': "13"}}
+        });
+      });
+
+      var newRegionIndex = 1;
+      var newRegionType = 0;
+      var regionTypes = ['editable', 'markupable', 'snippetable'];
+      function addRegion() {
+        if (newRegionType >= regionTypes.length) newRegionType = 0;
+        var container = new Element('div', {style: 'position:relative;margin-bottom:20px;'});
+        container.update('<div class="remove" onclick="this.up().remove()">&times;</div><div class="mercury-region" id="new_' + regionTypes[newRegionType] + '_' + newRegionIndex + '" data-type="' + regionTypes[newRegionType] + '">new <b>' + regionTypes[newRegionType] + '</b> region ' + newRegionIndex + '</div>');
+        $('content').insertBefore(container, $('dynamic_regions'));
+        Mercury.trigger('reinitialize');
+        newRegionIndex += 1;
+        newRegionType += 1;
+      }
+    </script>
     <script type="text/javascript">
       var saveUrl = null; // Set to the url that you want to save any given page to.
       var options = {
@@ -29,5 +105,28 @@
       <!-- Instantiate the PageEditor -->
       new Mercury.PageEditor(saveUrl, options);
     </script>
+    <!-- styles for the content layout -->
+    <style type="text/css">
+      body, td {
+        font: normal normal normal 100%/normal 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+
+    <div id="contents">
+      <ul class="contents">
+        <li><img src="delet.png" alt="jghb">efds</li>
+        <li>edfzxc</li>
+        <li>efdszxc</li>
+        <li>efdscx</li>
+      </ul>
+    </div>
+
+    <div id="editable" class="mercury-region" data-type="editable">
+    </div>
   </body>
 </html>

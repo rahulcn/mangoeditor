@@ -15201,7 +15201,7 @@ Showdown.converter = function() {
       });
       this.aboutElement = jQuery('<a>', {
         "class": "mercury-statusbar-about"
-      }).appendTo(this.element).html("Mercury Editor v" + Mercury.version);
+      }).appendTo(this.element).html("Mango Editor v" + Mercury.version);
       this.pathElement = jQuery('<div>', {
         "class": 'mercury-statusbar-path'
       }).appendTo(this.element);

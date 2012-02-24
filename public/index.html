@@ -4,19 +4,36 @@
     <title>Mango Editor beta</title>
     <script src="/prototype.js" type="text/javascript"></script>
     <style type="text/css">
-      input { padding: 20px !important }
-      .mercury-toolbar-container { display: none !important }
       #contents{
       	border:1px solid black;
-      	width:240px;
-      	height:550px;
-      	position: fixed;
+      	width:20%;
+      	height:100%;
+      	float:left;
+      	background-color: #fff;
       }
-      #editable1{
-      	float:right;
-      	width:1040px;
-      	height:550px;
+      #editable{
+      	width:60%;
+      	height:100%;
+      	margin: 0px 30%;
+      	background-color: #fff;
       }
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #aaa;
+      }
+      .contents{
+      list-style:none;
+      margin:0;
+      padding:0;
+      background-color:blue;
+      }
+      .contents li{
+       padding-left:20px;
+      }
+
+
+
     </style>
 
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0">
@@ -77,8 +94,15 @@
     </style>
   </head>
   <body>
-    <div id="contents"></div>
-    <div id="editable1" class="mercury-region" data-type="editable">
+    <div id="contents">
+      <ul class="contents">
+        <li><img src="delet.png" alt="jghb">Book Title</li><hr>
+        <li>Book Intro</li><hr>
+        <li>Tables of Content</li><hr>
+        <li>Glossar</li><hr>
+      </ul>
+    </div>
+    <div id="editable" class="mercury-region" data-type="editable">
     </div>
 
   </body>

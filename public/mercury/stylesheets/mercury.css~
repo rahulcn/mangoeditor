@@ -798,9 +798,9 @@ form fieldset.buttons .commit input:hover {
 }
 .mercury-separator,
 .mercury-line-separator {
-/*  width: 1px;*/
-  border: 10px;
-/*  margin: 0;*/
+  width: 1px;
+  border: 0;
+  margin: 0;
 }
 .mercury-line-separator {
   width: 1px;
@@ -854,7 +854,7 @@ form fieldset.buttons .commit input:hover {
   display: inline-block;
   height: 58px;
   margin-bottom: 20px;
-  min-width: 55px;
+
   text-align: center;
   white-space: nowrap;
   text-decoration: none;

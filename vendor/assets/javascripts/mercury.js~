@@ -115,13 +115,12 @@ window.Mercury = {
     toolbars: {
       primary: {
         save:                  ['Save', 'Save this page'],
-        sep1:                  ' ',
         undoredo:              {
           undo:                ['Undo', 'Undo your last action'],
           redo:                ['Redo', 'Redo your last action'],
           sep:                 ' '
           },
-        //insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['editable', 'markupable'] }],
+
 
         text:                ['Text', 'Text'],
         shapes:                ['Shapes', 'Shapes'],
@@ -129,9 +128,11 @@ window.Mercury = {
         charts:                ['Charts', 'Charts'],
 
         sep:  ' ',
+        insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['editable', 'markupable'] }],
+        insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['editable', 'markupable'] }],
+
         insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['editable', 'markupable'] }],
 
-        //insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['editable', 'markupable'] }],
 
         snippetPanel:          ['Widgets', 'Widgets Panel', { panel: '/mercury/panels/snippets.html' }],
         //historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
@@ -141,7 +142,6 @@ window.Mercury = {
         colors:                ['Colors', 'Colors'],
         transform:             ['Transform', 'Transformation'],
         align:                 ['Align', 'Text Alignment'],
-
         sep3:                  ' ',
         preview:               ['Preview', 'Preview this page', { toggle: true, mode: true }],
         publish:               ['Publish', 'Publish this book']
@@ -150,9 +150,13 @@ window.Mercury = {
       editable: {
         _regions:              ['editable', 'markupable'],
         predefined:            {
-          style:               ['Style', null, { select: '/mercury/selects/style.html', preload: true }],
-          sep1:                ' ',
-          formatblock:         ['Block Format', null, { select: '/mercury/selects/formatblock.html', preload: true }],
+          font:                ['Times New Roman', null, { select: '#', preload: true }],
+          sep:                 ' ',
+          fontsize:            ['12', null, { select: '##', preload: true }],
+          sep1:                 ' ',
+          //style:               ['Style', null, { select: '/mercury/selects/style.html', preload: true }],
+          //sep1:                ' ',
+          formatblock:         ['Headings', null, { select: '/mercury/selects/formatblock.html', preload: true }],
           sep2:                '-'
           },
         colors:                {

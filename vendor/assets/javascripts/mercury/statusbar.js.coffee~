@@ -8,7 +8,7 @@ class @Mercury.Statusbar
 
   build: ->
     @element = jQuery('<div>', {class: 'mercury-statusbar'})
-    @aboutElement = jQuery('<a>', {class: "mercury-statusbar-about"}).appendTo(@element).html("Mango Editor v#{Mercury.version}")
+    @aboutElement = jQuery('<a>', {class: "mercury-statusbar-about"}).appendTo(@element).html(src="mango-logo.png")
     @pathElement = jQuery('<div>', {class: 'mercury-statusbar-path'}).appendTo(@element)
 
     @element.css({visibility: 'hidden'}) unless @visible

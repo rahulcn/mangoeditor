@@ -116,6 +116,7 @@ window.Mercury = {
     toolbars: {
       primary: {
         save:                  ['Save', 'Save this page'],
+        preview:               ['Preview', 'Preview this page', { toggle: true, mode: true }],
         sep1:                  ' ',
         undoredo:              {
           undo:                ['Undo', 'Undo your last action'],
@@ -130,8 +131,8 @@ window.Mercury = {
         sep2:                  ' ',
         historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
         sep3:                  ' ',
-        notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }],
-        preview:               ['Preview', 'Preview this page', { toggle: true, mode: true }]        },
+        notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }]
+        },
 
       editable: {
         _regions:              ['editable', 'markupable'],

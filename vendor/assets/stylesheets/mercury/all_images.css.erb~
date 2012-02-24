@@ -63,7 +63,7 @@ form fieldset.buttons .commit input {
 .mercury-primary-toolbar .mercury-insertLink-button em,
 .mercury-expander-button[data-button=insertLink] em       { background-image: url(<%= asset_path 'mercury/toolbar/primary/insertlink.png' %>) }
 .mercury-primary-toolbar .mercury-insertMedia-button em,
-.mercury-expander-button[data-button=insertMedia] em      { background-image: url(<%= asset_path 'mercury/toolbar/primary/insertmedia.png' %>) }
+.mercury-expander-button[data-button=insertMedia] em      { background-image: url(<%= asset_path 'mercury/toolbar/primary/multimedia.png' %>) }
 .mercury-primary-toolbar .mercury-insertTable-button em,
 .mercury-expander-button[data-button=insertTable] em      { background-image: url(<%= asset_path 'mercury/toolbar/primary/inserttable.png' %>) }
 .mercury-primary-toolbar .mercury-insertCharacter-button em,

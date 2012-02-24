@@ -102,6 +102,10 @@
   text-decoration: none;
   font-family: Helvetica, Tahoma, Arial, sans-serif;
 }
+.mercury-preview-button {
+/*  margin-left:100px;*/
+
+}
 .mercury-primary-toolbar .mercury-button.pressed {
   background-repeat: no-repeat;
 }
@@ -166,6 +170,7 @@
 }
 .mercury-editable-toolbar .mercury-button-group .mercury-button:first-child {
   width: 23px;
+/*  height: 25px;*/
 }
 .mercury-editable-toolbar .mercury-button {
   width: 22px;
